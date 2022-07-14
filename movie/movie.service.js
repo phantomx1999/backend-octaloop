@@ -1,6 +1,5 @@
 
 const db = require('../_helpers/db');
-const moment = require('moment')
 module.exports = {
     saveMovie,
     getByYear
