@@ -42,7 +42,7 @@ async function authenticateUser(req, res, next) {
       res.status(400).send("All input is required");
     }
     const user = await userService.authenticate(email, password);
-    res.status(201).json(user);
+    res.status(200).json(user);
   } catch (err) {
     res.json(err)
   }
