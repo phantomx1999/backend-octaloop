@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }))
 
 
 //routes
-app.post('/movie/getByYear/:year', auth, filterMovie);
+app.get('/movie/getByYear', auth, filterMovie);
 app.post('/movie/getMovie', auth, getMovie);
 app.post('/user/register', registerUser);
 app.post('/user/login', authenticateUser);
@@ -27,7 +27,8 @@ app.post('/user/login', authenticateUser);
 
 //functions
 async function filterMovie(req, res, next) {
-  let year = req.params.year;
+  let year = req.query.year || req.body.year;
+  console.log(year);
   let d = new Date(year, 12);
   const movies = await movieService.getByYear(d)
   res.json(movies);
