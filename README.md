@@ -46,7 +46,21 @@
       <li> password </li>
     </ul>
     <p> Expected input is string values for all. On Success (201) it returns a user object with the access token</p>
+    <p>
+      <b> Sample Input </b>
+    </p>
+      <i>
+      {
+        "first_name" : "Nipun",
+        "last_name" : "Agarwal",
+        "email: "nipun@test.com",
+        "password": "test@123"
+      }
+      </i>
+      
+       
   </li>
+  <hr>
   <li>
     <i id="login"> /user/login </i>
     <p><b>POST</b></p>
@@ -56,6 +70,15 @@
       <li> password </li>
     </ul>
     <p> On success (200) it returns a user object with the access token </p>
+    <p>
+      <b> Sample Input </b>
+    </p>
+      <i>
+      {
+        "email: "nipun@test.com",
+        "password": "test@123"
+      }
+      </i>
   </li>
   <h3> Protected Routes </h3>
   <li> 
@@ -68,6 +91,15 @@
     </ul>
     <p> <b> NOTE: </b> token can be passed as a query parameter/header(x-access-token)/in the body. Title can be a movie name or imdb id of the movie. Token is obtained from the <a href="#login">/user/login </a> route.</p>
     <p> On Sucess(200) returns a movie object which has been saved on mongodb</p>
+    <p>
+      <b> Sample Input </b>
+    </p>
+      <i>
+      {
+        "token: "TOKEN FROM LOGIN",
+        "title": "tt2911666" //imdb id or movie name ('John Wick')
+      }
+      </i>
   </li>
   <li>
     <i> /movie/getByYear</i>
@@ -79,6 +111,15 @@
     </ul>
     <p> <b> NOTE: </b> token can be passed as a query parameter/header(x-access-token)/in the body. Year is any year for which you want to get the movies from it can be passed in the url query parameters or in the body. Token is obtained from the <a href="#login">/user/login </a> route.</p>
     <p> On Success (200) returns a list of movies released uptil the year mentioned and ordered by their imdb rating </p>
+    <p>
+      <b> Sample Input </b>
+    </p>
+      <i>
+      {
+        "token: "TOKEN FROM LOGIN",
+        "year": "2015" //all movies released upto 2015
+      }
+      </i>
   </li>
   </ul>
   
