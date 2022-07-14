@@ -70,7 +70,7 @@
     <p> On Sucess(200) returns a movie object which has been saved on mongodb</p>
   </li>
   <li>
-    <i> /movie/getByYear/:year </i>
+    <i> /movie/getByYear</i>
     <p><b>GET</b></p>
     <p> Required parameters/fields are </p>
     <ul>
