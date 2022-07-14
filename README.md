@@ -80,6 +80,7 @@
       }
       </i>
   </li>
+  <hr>
   <h3> Protected Routes </h3>
   <li> 
     <i> /movie/getMovie </i>
@@ -101,6 +102,7 @@
       }
       </i>
   </li>
+  <hr>
   <li>
     <i> /movie/getByYear</i>
     <p><b>GET</b></p>
@@ -121,6 +123,7 @@
       }
       </i>
   </li>
+  <hr>
   </ul>
   
   
