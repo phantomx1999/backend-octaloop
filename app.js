@@ -64,7 +64,7 @@ async function registerUser(req, res, next) {
     res.status(201).json(user);
   }
   catch (e) {
-    console.log(e);
+    res.json(e);
   }
 }
 

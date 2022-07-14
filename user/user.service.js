@@ -32,7 +32,7 @@ async function authenticate(email, password){
 }
 async function register(params){
     if (await db.User.findOne({ email: params.email })) {
-        return;
+        throw ({ status: 200, code: 'USER_EXISTS', message: 'User with the email already exists' });
     }
     let encryptedPassword = await bcrypt.hash(params.password, 10);
     const user = await db.User.create({
