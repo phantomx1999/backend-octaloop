@@ -6,7 +6,7 @@ const schema = new Schema({
     Year: { type: String, default: "N/A" },
     Rated: { type: String, default: "N/A" },
     Released: { type: Date, default: null},
-    RunTime: { type: String, default: "N/A"},
+    Runtime: { type: String, default: "N/A"},
     Genre: { type: String, default: "N/A"},
     Director: { type: String, default: "N/A" },
     Writer: { type: String, default: "N/A" },
@@ -24,9 +24,9 @@ const schema = new Schema({
     Metascore: {type: String, default: 0},
     imdbRating: Schema.Types.Mixed,
     imdbVotes: {type: String, default: "N/A"},
-    imdbID: {type: String, default: "N/A"},
+    imdbID: {type: String, default: "N/A", unique: true},
     Type: {type: String, default: "N/A"},
-    DVD: {type: Date, default: null},
+    DVD: {type: String, default: null},
     BoxOffice: {type: String, default: "N/A"},
     Production: {type: String, default: "N/A"},
     Website: {type: String, default: "N/A"}
@@ -39,6 +39,7 @@ schema.set('toJSON', {
     transform: function (doc, ret) {
         // remove these props when object is serialized
         delete ret._id;
+        delete ret.id;
     }
 });
 
