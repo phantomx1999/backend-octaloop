@@ -15,14 +15,23 @@
   </li>
   <li> <p>Install all dependencies using the command below</p>
   <i>
+  <pre>
+      <code>
   npm i
+  </code>
+  </pre>
   </i>
   </li>
   <li> 
     <p>
       Start the server 
     </p>
-    <i> npm run start </i>
+    <i>
+    <pre>
+    <code>
+    npm run start
+    </code>
+    </pre> </i>
   </li>
 </ul>
 
@@ -50,12 +59,16 @@
       <b> Sample Input </b>
     </p>
       <i>
+      <pre>
+      <code>
       {
         "first_name" : "Nipun",
         "last_name" : "Agarwal",
         "email: "nipun@test.com",
         "password": "test@123"
       }
+      </code>
+  </pre>
       </i>
       
        
@@ -74,10 +87,14 @@
       <b> Sample Input </b>
     </p>
       <i>
+      <pre>
+      <code>
       {
         "email: "nipun@test.com",
         "password": "test@123"
       }
+      </code>
+  </pre>
       </i>
   </li>
   <hr>
@@ -96,10 +113,14 @@
       <b> Sample Input </b>
     </p>
       <i>
+      <pre>
+      <code>
       {
         "token: "TOKEN FROM LOGIN",
         "title": "tt2911666" //imdb id or movie name ('John Wick')
       }
+      </code>
+      </pre>
       </i>
   </li>
   <hr>
@@ -117,10 +138,90 @@
       <b> Sample Input </b>
     </p>
       <i>
+      <pre>
+      <code>
       {
         "token: "TOKEN FROM LOGIN",
         "year": "2015" //all movies released upto 2015
       }
+      </code>
+  </pre>
+      </i>
+     
+  </li>
+  <li>
+    <i> /movies/updateMovie</i>
+    <p><b>PATCH</b></p>
+    <p> Required parameters/fields are </p>
+    <ul>
+      <li> token </li>
+      <li> title </li> //Must be the exact title of the movie or can be the imdb id of the movie
+    </ul>
+    <p> Optional fields are </p>
+    <ul>
+    <li>year</li>
+    <li>rated</li>
+    <li>released</li>
+    <li>runTime</li>
+    <li>genre</li>
+    <li>director</li>
+    <li>writer</li>
+    <li>actors</li>
+    <li>plot</li>
+    <li>country</li>
+    <li>language</li>
+    <li>awards</li>
+    <li>poster</li>
+    <li>ratings</li>
+    <li>metascore</li>
+    <li>imdbRating</li>
+    <li>imdbVotes</li>
+    <li>type</li>
+    <li>dvd</li>
+    <li>boxOffice</li>
+    <li>production</li>
+    <li>website</li>
+    </ul>
+    <p> <b> NOTE: </b>Token can be passed as a query parameter/header(x-access-token)/in the body. Year is any year for which you want to get the movies from it can be passed in the url query parameters or in the body. Token is obtained from the <a href="#login">/user/login </a> route.</p>
+    <p> <b> NOTE: </b>See the sample for expected values of all the fields. User doesnt have to input all the fields only the entered fields will be updated</p>  
+    <p> On Success (200) returns a movies object updated with the input fields provided. </p>
+    <p>
+      <b> Sample Input </b>
+    </p>
+    <pre>
+    <code>
+      <i>
+      {
+        "token": "TOKEN FROM LOGIN HERE",
+        "title": "tt0292490",
+        "year": "2002",
+        "rated": "R",
+        "released": "12/11/1981",
+        "runTime": "189 min",
+        "genre": "Comedy, Drama, Romance",
+        "director": "John Doe",
+        "writer": "John Doe, John Dane",
+        "actors": "John Doe, John Dane",
+        "plot": "lorem",
+        "country": "India",
+        "language": "Hindi",
+        "awards": "10 wins & 30 nominations",
+        "poster": "lorem",
+        "ratings": [{
+            "Source": "Internet Movie Database",
+            "Value": "8.2/10"
+        }],
+        "metaScore": "85",
+        "imdbRating": "9.1",
+        "imdbVotes": "71,537",
+        "type": "movie",
+        "dvd": "12/11/1983",
+        "boxOffice": "$116,900,694",
+        "production": "John Productions",
+        "website": "Jane Doe"
+      }
+      </code>
+  </pre>
       </i>
   </li>
   <hr>
